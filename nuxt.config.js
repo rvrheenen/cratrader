@@ -39,7 +39,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    "@/plugins/vue-filters.js",
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -53,14 +55,20 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-fontawesome'
   ],
   styleResources: {
     scss: [
       './assets/scss/*.scss',
     ]
   },
-
+  fontawesome: {
+    imports: [{
+      set: '@fortawesome/free-solid-svg-icons',
+      icons: ['fas']
+    }, ],
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
