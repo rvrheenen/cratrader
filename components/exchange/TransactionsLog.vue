@@ -2,6 +2,7 @@
   <table class="table table-dark table-sm">
     <thead>
       <tr>
+        <th>Time</th>
         <th>Pair</th>
         <th>Price</th>
         <th>Amount</th>
@@ -15,6 +16,7 @@
         :key="i"
         :class="transaction.action + 'row'"
       >
+        <td>{{ transaction.timestamp | formatDate }}</td>
         <td>{{ transaction.pair[0] }} {{ transaction.pair[1] }}</td>
         <td>{{ transaction.price }}</td>
         <td>{{ transaction.amount }}</td>
@@ -32,6 +34,7 @@
 
 <script>
   import socket from "~/plugins/socket.io.js";
+  import moment from "moment";
   export default {
     data() {
       return {
@@ -56,6 +59,13 @@
           text: `${transaction.action} ${transaction.amount}`,
         });
       });
+    },
+    filters: {
+      formatDate: function (value) {
+        if (value) {
+          return moment.unix(String(value)).format("YYYY/MM/DD hh:mm:ss");
+        }
+      },
     },
   };
 </script>

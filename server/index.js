@@ -101,6 +101,7 @@ const processTransaction = (order, amount) => {
   let transaction = {}
   Object.assign(transaction, order);
   // console.log
+  transaction['timestamp'] = Date.now() / 1000;
   transaction['amount'] = amount;
   performedTransactions.push(transaction)
   io.emit('addedTransaction', transaction)
