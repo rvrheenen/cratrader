@@ -1,5 +1,8 @@
 <template>
-  <h1>Home</h1>
+  <section id="main">
+    <h1>Home</h1>
+    <nuxt-link to="exchange">Start trading!</nuxt-link>
+  </section>
 </template>
 
 <script>
@@ -7,4 +10,10 @@
 </script>
 
 <style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

@@ -56,7 +56,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
   ],
   styleResources: {
     scss: [
