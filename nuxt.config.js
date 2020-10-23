@@ -57,6 +57,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
+    'vue-sweetalert2/nuxt'
   ],
   styleResources: {
     scss: [

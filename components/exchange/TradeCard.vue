@@ -76,14 +76,6 @@
       };
     },
     methods: {
-      fillMax() {
-        if (this.mode == "buy") {
-          this.amount =
-            Math.floor((this.money / this.currency.price) * 10000) / 10000;
-        } else {
-          this.amount = this.currency.owned;
-        }
-      },
       purchase() {
         let payload = {
           price: this.price,
